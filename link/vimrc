@@ -1,0 +1,89 @@
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Visual settings
+set cursorline " Highlight current line
+set number " Enable line numbers.
+set showtabline=2 " Always show tab bar.
+" set relativenumber " Use relative line numbers. Current line is still in status bar.
+set title " Show the filename in the window titlebar.
+set nowrap " Do not wrap lines.
+set noshowmode " Don't show the current mode (airline.vim takes care of us)
+" set laststatus=2 " Always show status line
+set textwidth=80
+
+" Indentation
+set autoindent " Copy indent from last line when starting new line.
+set shiftwidth=4 " The # of spaces for indenting.
+set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
+set softtabstop=4 " Tab key results in 4 spaces
+set tabstop=4 " Tabs indent only 4 spaces
+set expandtab " Expand tabs to spaces
+
+set nojoinspaces " Only insert single space after a '.', '?' and '!' with a join command.
+
+" Search / replace
+set gdefault " By default add g flag to search/replace. Add g to toggle.
+set hlsearch " Highlight searches
+set incsearch " Highlight dynamically as pattern is typed.
+set ignorecase " Ignore case of searches.
+set smartcase " Ignore 'ignorecase' if search pattern contains uppercase characters.
+
+" Vim commands
+set hidden " When a buffer is brought to foreground, remember undo history and marks.
+set report=0 " Show all changes.
+" set mouse=a " Enable mouse in all modes.
+set ttymouse=xterm2 " Ensure mouse works inside tmux
+set shortmess+=I " Hide intro menu.
+
+" Splits
+set splitbelow " New split goes below
+set splitright " New split goes right
+
+set nobackup
+
+" set noswapfile
+
+set nowritebackup
+
+" keep 50 lines of command line history
+set history=50
+
+" show the cursor position all the time
+set ruler
+
+" display incomplete commands
+set showcmd
+
+" do incremental searching
+set incsearch
+
+syntax on
+"set foldenable
+"set foldmethod=manual
+"set foldmethod=syntax
+set autoindent
+set cindent
+set paste
+
+set termencoding=utf-8
+set encoding=utf-8
+set fileencoding=utf-8
+
+set autowrite
+
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+" set noexpandtab
+
+" Wrap gitcommit file types at the appropriate length
+filetype indent plugin on
+
+" Local Customization
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif

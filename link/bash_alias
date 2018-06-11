@@ -1,0 +1,56 @@
+# Some example alias instructions
+# If these are enabled they will be used instead of any instructions
+# they may mask.  For example, alias rm='rm -i' will mask the rm
+# application.  To override the alias instruction use a \ before, ie
+# \rm will call the real rm not the alias.
+
+# Interactive operation
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# alias in .functions
+alias cd=cd_func
+
+# Default to human readable figures
+alias df='df -h'
+alias du='du -h'
+
+# Misc
+alias less='less -r'                          # raw control characters
+alias whence='type -a'                        # where, of a sort
+alias grep='grep --color=auto'                # show differences in colour
+alias egrep='egrep --color=auto'              # show differences in colour
+alias fgrep='fgrep --color=auto'              # show differences in colour
+alias cd..='cd ..'
+alias ..='cd ..'
+# Easily re-execute the last history command.
+alias r="fc -s"
+alias ftpdump='tcpdump -s0 -nn port 20 or port 21'
+alias ps='ps aux | grep -v grep'
+
+# Some shortcuts for different directory listings
+alias ls='ls -hF --color=tty'                 # classify files in colour
+# alias dir='ls --color=auto --format=vertical'
+# alias vdir='ls --color=auto --format=long'
+alias ll='ls -lh'                               # long list
+alias la='ls -A'                                # all but . and ..
+# alias l='ls -CF'                              #
+
+# git
+# see https://github.com/cowboy/dotfiles/blob/master/source/50_vcs.sh
+alias gs="git status"
+alias gl="git log"
+alias gg='git log --decorate --oneline --graph --date-order --all'
+alias gm='git commit -m'
+alias gb='git branch'
+alias gr='git remote'
+alias ga='git add'
+alias gc='git checkout'
+
+# cmake
+alias cmk='cmake_helper'
+alias cmkd='cmake_helper Debug'
+alias cmkr='cmake_helper Release'
+alias cmkrd='cmake_helper RelWithDebInfo'
+alias cmkmr='cmake_helper MinSizeRel'
