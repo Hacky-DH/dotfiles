@@ -22,12 +22,22 @@ alias whence='type -a'                        # where, of a sort
 alias grep='grep --color=auto'                # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
+
 alias cd..='cd ..'
 alias ..='cd ..'
+alias cd.='cd $(readlink -f .)'
+
 # Easily re-execute the last history command.
 alias r="fc -s"
 alias ftpdump='tcpdump -s0 -nn port 20 or port 21'
 alias ps='ps aux | grep -v grep'
+alias jps='jps -lm | grep -v jps'
+alias reload='source ~/.bash_profile'
+
+# List aliases functions paths
+alias aliases="alias | sed 's/=.*//'"
+alias functions="declare -f | grep '^[a-z].*()' | sed 's/{$//'"
+alias paths='echo -e ${PATH//:/\\n}'
 
 # Some shortcuts for different directory listings
 alias ls='ls -hF --color=tty'                 # classify files in colour
@@ -36,6 +46,12 @@ alias ls='ls -hF --color=tty'                 # classify files in colour
 alias ll='ls -lh'                               # long list
 alias la='ls -A'                                # all but . and ..
 # alias l='ls -CF'                              #
+alias lpm="stat -c '%a %n' *"
+
+alias tree="tree -A"
+alias treed="tree -d"
+alias tree1="tree -d -L 1"
+alias tree2="tree -d -L 2"
 
 # git
 # see https://github.com/cowboy/dotfiles/blob/master/source/50_vcs.sh
@@ -47,6 +63,8 @@ alias gb='git branch'
 alias gr='git remote'
 alias ga='git add'
 alias gc='git checkout'
+alias gd='git diff'
+alias gp='git push'
 
 # cmake
 alias cmk='cmake_helper'
@@ -54,3 +72,7 @@ alias cmkd='cmake_helper Debug'
 alias cmkr='cmake_helper Release'
 alias cmkrd='cmake_helper RelWithDebInfo'
 alias cmkmr='cmake_helper MinSizeRel'
+
+# Network
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
