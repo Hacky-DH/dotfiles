@@ -22,7 +22,7 @@ alias whence='type -a'                        # where, of a sort
 alias grep='grep --color=auto'                # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
-alias rgrep='grep -nrI'                       # grep text files recursively with line number
+alias rgrep='grep  --color=auto -nrI'         # grep text files recursively with line number
 
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -66,6 +66,8 @@ alias ga='git add'
 alias gc='git checkout'
 alias gd='git diff'
 alias gp='git push'
+alias gun='git config --global user.name'
+alias gue='git config --global user.email'
 
 # cmake
 alias cmk='cmake_helper'
