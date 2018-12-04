@@ -31,7 +31,8 @@ alias cd.='cd $(readlink -f .)'
 # Easily re-execute the last history command.
 alias r="fc -s"
 alias ftpdump='tcpdump -s0 -nn port 20 or port 21'
-alias ps='ps aux | grep -v grep'
+alias pps='ps -e -o user,pid,ppid,stat,cmd | grep -v grep'
+alias ps='ps auxf | grep -v grep'
 alias jps='jps -lm | grep -v jps'
 alias reload='source ~/.bash_profile'
 
