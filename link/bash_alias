@@ -72,6 +72,8 @@ alias gfu='git fetch upstream'
 alias gmu='git merge upstream/master'
 alias gun='git config --global user.name'
 alias gue='git config --global user.email'
+alias gf='git fetch'
+alias grb='git pull origin master && git rebase master'
 
 # cmake
 alias cmk='cmake_helper'

@@ -9,7 +9,7 @@
 @doskey ga=git add $*
 @doskey gb=git branch $*
 @doskey gc=git checkout $*
-@doskey gd=git diff
+@doskey gd=git diff $*
 @doskey gg=git log --decorate --oneline --graph --date-order --all
 @doskey gl=git log
 @doskey gm=git commit -m $*
@@ -21,3 +21,5 @@
 @doskey gmu=git merge upstream/master
 @doskey gue=git config --global user.email
 @doskey gun=git config --global user.name
+@doskey gf=git fetch $*
+@doskey grb=git pull origin master$tgit rebase master
