@@ -22,5 +22,5 @@
 @doskey gue=git config --global user.email $*
 @doskey gun=git config --global user.name $*
 @doskey gf=git fetch $*
-@doskey grb=git pull origin master$tgit rebase master
+@doskey grb=git pull --rebase origin master
 @doskey p=%USERPROFILE%\local.bat
