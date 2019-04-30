@@ -19,7 +19,8 @@
 @doskey gpm=git push origin master
 @doskey gfu=git fetch upstream
 @doskey gmu=git merge upstream/master
-@doskey gue=git config --global user.email
-@doskey gun=git config --global user.name
+@doskey gue=git config --global user.email $*
+@doskey gun=git config --global user.name $*
 @doskey gf=git fetch $*
 @doskey grb=git pull origin master$tgit rebase master
+@doskey p=%USERPROFILE%\local.bat
