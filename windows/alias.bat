@@ -1,3 +1,4 @@
+@doskey /listsize=1000
 @doskey ls=dir /b /ogn $*
 @doskey ll=dir /ogn /x $*
 @doskey lt=dir /ogd /x $*
