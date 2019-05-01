@@ -23,4 +23,6 @@
 @doskey gun=git config --global user.name $*
 @doskey gf=git fetch $*
 @doskey grb=git pull --rebase origin master
+@doskey gh=git stash $*
+@doskey ghp=git stash pop
 @doskey p=%USERPROFILE%\local.bat
