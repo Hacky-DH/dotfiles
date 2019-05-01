@@ -74,6 +74,8 @@ alias gun='git config --global user.name'
 alias gue='git config --global user.email'
 alias gf='git fetch'
 alias gpb='git pull --rebase origin master'
+alias gh='git stash'
+alias ghp='git stash pop'
 
 # cmake
 alias cmk='cmake_helper'
