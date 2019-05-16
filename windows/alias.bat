@@ -1,3 +1,4 @@
+@echo off
 @doskey /listsize=1000
 @doskey ls=dir /b /ogn $*
 @doskey ll=dir /ogn /x $*
@@ -22,7 +23,8 @@
 @doskey gue=git config --global user.email $*
 @doskey gun=git config --global user.name $*
 @doskey gf=git fetch $*
-@doskey grb=git pull --rebase origin master
+@doskey gpb=git pull --rebase origin master
 @doskey gh=git stash $*
 @doskey ghp=git stash pop
-@doskey p=%USERPROFILE%\local.bat
+%USERPROFILE%\local.bat
+
