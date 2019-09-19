@@ -11,7 +11,7 @@ set title " Show the filename in the window titlebar.
 set nowrap " Do not wrap lines.
 " set noshowmode " Don't show the current mode (airline.vim takes care of us)
 " set laststatus=2 " Always show status line
-set textwidth=80
+set textwidth=100
 
 " Indentation
 set autoindent " Copy indent from last line when starting new line.
