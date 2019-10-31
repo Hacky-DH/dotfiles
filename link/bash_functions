@@ -109,3 +109,64 @@ cmake_helper() {
     fail "no CMakeLists.txt"
   fi
 }
+
+gpwd() {
+  sec=3600 # 1h
+  [[ ! -z $1 ]] && sec=$1
+  git config --global credential.helper "cache --timeout=$sec"
+}
+
+# docker
+dr() {
+  [[ -z $1 ]] && { fail "requred image"; return; }
+  image=$1
+  shift
+  cmd=/bin/bash
+  [[ ! -z $1 ]] && cmd=$1
+  /usr/bin/docker run -ti $image "$cmd"
+}
+
+de() {
+  [[ -z $1 ]] && { fail "requred container"; return; }
+  container=$1
+  shift
+  cmd=/bin/bash
+  [[ ! -z $1 ]] && cmd=$1
+  /usr/bin/docker exec -ti $container "$cmd"
+}
+
+dm() {
+  [[ -z $1 ]] && { fail "requred container"; return; }
+  container=$1
+  shift
+  [[ -z $1 ]] && { fail "requred image"; return; }
+  image=$1
+  msg='commit'
+  shift
+  [[ ! -z $1 ]] && msg=$1
+  /usr/bin/docker commit -m=$msg $container $image
+}
+
+db() {
+  [[ -z $1 ]] && { fail "requred image"; return; }
+  image=$1
+  shift
+  dockerfile='./Dockerfile'
+  [[ ! -z $1 ]] && dockerfile=$1
+  [[ ! -e $dockerfile ]] && { fail "requred Dockerfile"; return; }
+  /usr/bin/docker build -f $dockerfile -t $image
+}
+
+dl() {
+  [[ -z $1 ]] && { fail "requred username"; return; }
+  username=$1
+  shift
+  [[ ! -z $1 ]] && hub_addr=$1
+  /usr/bin/docker login -u $username $hub_addr
+}
+
+dp() {
+  [[ -z $1 ]] && { fail "requred image"; return; }
+  image=$1
+  /usr/bin/docker push $image
+}

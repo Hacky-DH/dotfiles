@@ -22,7 +22,7 @@ alias whence='type -a'                        # where, of a sort
 alias grep='grep --color=auto'                # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
-alias rgrep='grep  --color=auto -nrI'         # grep text files recursively with line number
+alias rgrep='grep --color=auto -nrI'          # grep text files recursively with line number
 
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -31,9 +31,9 @@ alias cd.='cd $(readlink -f .)'
 # Easily re-execute the last history command.
 alias r="fc -s"
 alias ftpdump='tcpdump -s0 -nn port 20 or port 21'
-alias pps='ps -e -o user,pid,ppid,stat,cmd | grep -v grep'
-alias ps='ps auxf | grep -v grep'
-alias jps='jps -lm | grep -v jps'
+alias pps='/bin/ps -e -o user,pid,ppid,stat,cmd | grep -v grep'
+alias ps='/bin/ps auxf | grep -v grep'
+alias jps='/bin/jps -lm | grep -v jps'
 alias reload='source ~/.bash_profile'
 
 # List aliases functions paths
@@ -76,6 +76,9 @@ alias gf='git fetch'
 alias gpb='git pull --rebase origin master'
 alias gh='git stash'
 alias ghp='git stash pop'
+alias gP='git pull'
+alias gC='git clone'
+alias gR='git rebase'
 
 # cmake
 alias cmk='cmake_helper'
