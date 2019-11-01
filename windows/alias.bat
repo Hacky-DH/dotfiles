@@ -26,7 +26,4 @@
 @doskey gpb=git pull --rebase origin master
 @doskey gh=git stash $*
 @doskey ghp=git stash pop
-@doskey gP=git pull
-@doskey gC=git clone
-@doskey gR=git rebase
 %USERPROFILE%\local.bat
