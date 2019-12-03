@@ -23,13 +23,14 @@ alias grep='grep --color=auto'                # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 alias rgrep='grep --color=auto -nrI'          # grep text files recursively with line number
+alias cls='clear'
 
 alias cd..='cd ..'
 alias ..='cd ..'
 alias cd.='cd $(readlink -f .)'
 
 # Easily re-execute the last history command.
-alias r="fc -s"
+alias r='fc -s'
 alias ftpdump='tcpdump -s0 -nn port 20 or port 21'
 alias pps='/bin/ps -e -o user,pid,ppid,stat,cmd | grep -v grep'
 alias ps='/bin/ps auxf | grep -v grep'
@@ -50,15 +51,15 @@ alias la='ls -A'                                # all but . and ..
 # alias l='ls -CF'                              #
 alias lpm="stat -c '%a %n' *"
 
-alias tree="tree -A"
-alias treed="tree -d"
-alias tree1="tree -d -L 1"
-alias tree2="tree -d -L 2"
+alias tree='tree -A'
+alias treed='tree -d'
+alias tree1='tree -d -L 1'
+alias tree2='tree -d -L 2'
 
 # git
 # see https://github.com/cowboy/dotfiles/blob/master/source/50_vcs.sh
-alias gs="git status"
-alias gl="git log"
+alias gs='git status'
+alias gl='git log'
 alias gg='git log --decorate --oneline --graph --date-order --all'
 alias gm='git commit -m'
 alias gb='git branch'
@@ -79,6 +80,7 @@ alias ghp='git stash pop'
 alias gP='git pull'
 alias gC='git clone'
 alias gR='git rebase'
+alias github='gun Hacky-DH && gue dhgacky@gmail.com'
 
 # cmake
 alias cmk='cmake_helper'
@@ -88,5 +90,15 @@ alias cmkrd='cmake_helper RelWithDebInfo'
 alias cmkmr='cmake_helper MinSizeRel'
 
 # Network
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias ips='hostname -I'
+
+# swap mouse
+xinput > /dev/null 2>&1
+if [[ $? -eq 0 ]];then
+	# 11 is mouse device id, may different in other devices
+	# use xinput to see the id
+	alias left='xinput set-button-map 11 3 2 1'
+	alias right='xinput set-button-map 11 1 2 3'
+fi
