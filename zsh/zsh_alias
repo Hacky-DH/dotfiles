@@ -1,0 +1,64 @@
+# Default to human readable figures
+alias df='df -h'
+alias du='du -h'
+
+# Misc
+alias rgrep='grep -nrI'          # grep text files recursively with line number
+alias cls='clear'
+# Easily re-execute the last history command.
+alias r='fc' 
+alias pps='/bin/ps -e -o user,pid,ppid,stat,cmd | grep -v grep'
+alias ps='/bin/ps aux | grep -v grep'
+alias jps='/bin/jps -lm | grep -v jps'
+alias reload='source ~/.zshrc'
+
+unalias 1
+unalias 2
+unalias 3
+unalias 4
+unalias 5
+unalias 6
+unalias 7
+unalias 8
+unalias 9
+
+alias cd..='cd ..'
+alias ..='cd ..'
+alias cd.='cd $(readlink -f .)'
+
+# List aliases functions paths
+alias aliases="alias | sed 's/=.*//'"
+alias functions="declare -f | grep '^[a-z].*()' | sed 's/{$//'"
+alias paths='echo -e ${PATH//:/\\n}'
+
+# git
+# see https://github.com/cowboy/dotfiles/blob/master/source/50_vcs.sh
+alias gs='git status'
+alias gl='git log'
+alias gg='git log --decorate --oneline --graph --date-order --all'
+alias gm='git commit -m'
+alias gb='git branch'
+alias gr='git remote -v'
+alias ga='git add'
+alias gc='git checkout'
+alias gd='git diff'
+alias gp='git push'
+alias gpm='git push origin master'
+alias gfu='git fetch upstream'
+alias gmu='git merge upstream/master'
+alias gun='git config --global user.name'
+alias gue='git config --global user.email'
+alias gf='git fetch'
+alias gpb='git pull --rebase origin master'
+alias gh='git stash'
+alias ghp='git stash pop'
+alias gP='git pull'
+alias gC='git clone'
+alias gR='git rebase'
+alias github='gun Hacky-DH && gue dhgacky@gmail.com'
+
+# Network
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias ips='hostname -I'
+
