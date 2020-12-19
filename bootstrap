@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # bootstrap installs things.
 
@@ -99,12 +99,20 @@ link_file () {
 }
 
 install() {
-  info 'installing dotfiles'
-  local overwrite_all=false backup_all=false skip_all=false
-  for src in $(find -H "${DOTFILES}/link" -maxdepth 1 -type f -not -path '*.git*'); do
-    dst="$HOME/.$(basename "${src}")"
+  local overwrite_all=false backup_all=false skip_all=false sh_dir=
+  if [ ${SHELL} == "/bin/bash" ];then
+    sh_dir="bash"
+  elif [ ${SHELL} == "/bin/zsh" ];then
+    sh_dir="zsh"
+  else
+    fail "not support for ${SHELL}"
+  fi
+  info "installing dotfiles in ${sh_dir}"
+  for src in $(find -H "${DOTFILES}/${sh_dir}" -maxdepth 1 -type f -not -path '*.git*'); do
+    dst="$HOME/.$(basename ${src})"
     link_file $dst $src
+    info ${src}
   done
+  info '  All installed!'
 }
 install
-echo '  All installed!'
