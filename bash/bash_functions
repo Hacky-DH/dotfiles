@@ -173,16 +173,16 @@ dp() {
 
 # ps kill
 pk() {
-    [[ -z $1 ]] && { /bin/ps auxf; return; }
-    if [[ $1 = "bash" ]];then
-        p=$(pgrep bash)
-        p=$(echo "$p" | grep -v $$)
-        if [[ -n $p ]];then
-            echo "$p" | xargs kill -9
-        else
-            echo "no bash to kill"
-        fi
-    else
-        pkill -cex $1
-    fi
+  [[ -z $1 ]] && { /bin/ps auxf; return; }
+  if [[ $1 = "bash" ]];then
+    p=$(pgrep bash)
+    p=$(echo "$p" | grep -v $$)
+    if [[ -n $p ]];then
+      echo "$p" | xargs kill -9
+    else
+      echo "no bash to kill"
+    fi
+  else
+    pkill -cex $1
+  fi
 }
