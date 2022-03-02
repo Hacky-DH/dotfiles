@@ -81,6 +81,8 @@ alias gP='git pull'
 alias gC='git clone'
 alias gR='git rebase'
 alias github='gun Hacky-DH && gue dhgacky@gmail.com'
+alias gpwds='git config --global credential.helper store'
+alias gpwdu='git config --global --unset credential.helper'
 
 # cmake
 alias cmk='cmake_helper'
