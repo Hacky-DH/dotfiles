@@ -104,3 +104,16 @@ if [[ $? -eq 0 ]];then
 	alias left='xinput set-button-map 11 3 2 1'
 	alias right='xinput set-button-map 11 1 2 3'
 fi
+
+# HDFS
+# hdfs getconf -confkey fs.defaultFS
+alias hls="hadoop fs -ls -h"
+alias hmd="hadoop fs -mkdir -p"
+alias hcp="hadoop fs -cp"
+alias hmv="hadoop fs -mv"
+alias hdu="hadoop fs -du -s -h"
+alias hrm="hadoop fs -rm -f -r -skipTrash"
+alias hhead="hadoop fs -head"
+alias hcat="hadoop fs -cat"
+alias hget="hadoop fs -get"
+alias hput="hadoop fs -put"
