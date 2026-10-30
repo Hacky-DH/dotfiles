@@ -58,6 +58,9 @@ alias gP='git pull'
 alias gC='git clone'
 alias gR='git rebase'
 alias github='gun Hacky-DH && gue dhgacky@gmail.com'
+alias gwl='git worktree list'
+alias gwa='git worktree add'
+alias gwr='git worktree remove'
 
 # Network
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'

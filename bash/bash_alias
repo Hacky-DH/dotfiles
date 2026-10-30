@@ -85,6 +85,9 @@ alias gR='git rebase'
 alias github='gun Hacky-DH && gue dhgacky@gmail.com'
 alias gpwds='git config --global credential.helper store'
 alias gpwdu='git config --global --unset credential.helper'
+alias gwl='git worktree list'
+alias gwa='git worktree add'
+alias gwr='git worktree remove'
 
 # cmake
 alias cmk='cmake_helper'
